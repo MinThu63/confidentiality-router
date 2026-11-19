@@ -1,6 +1,6 @@
 # Confidentiality-Aware Request Router
 
-*Project completed during my internship.*
+> **INTERNSHIP PROJECT — completed during my internship**
 
 **A small decision model that decides where an AI request is allowed to run: on-prem, private cloud, or a public API — 90% exactly right, and 0 of 25 high-sensitivity requests sent outside.**
 
@@ -26,8 +26,6 @@
 | **Problem** | Every AI request has to land on one of three trust boundaries. Get it wrong one way and data leaks; get it wrong the other way and you burn money and capacity. |
 | **Approach** | Fine-tune a 2B decision model — not an LLM, a classifier that scores options — into a two-question policy: a yes/no sensitivity guard, then a three-way destination choice. |
 | **Headline result** | **90.0% exact destination (72/80), 96% of high-sensitivity kept local (24/25), 0 high-sensitivity to a public API** — on an 80-case holdout written *after* the model was frozen. |
-| **Cost** | 1–2 forward passes, no text generation · 115.8 ms p50 / 126.6 ms p95 · ~4.5 GB VRAM · 202 MB adapter on a 4.3 GB base model. |
-| **Honest caveat** | Calibration error 0.143 vs a 0.10 target, and 3 of 30 internal requests still reached the outside API. A strong filter with a human/policy backstop — not a guarantee. |
 | **Status** | **Handed over to the team — they were happy with the results. Now being integrated into the company's harness for production use.** |
 
 > **What makes it worth reading:** the model is the easy part. The work was building an evaluation harness honest enough to keep proving the project wrong, generating training data that generalises past its author's imagination, and recognising when the remaining gap was a *problem-framing* problem, not a training problem.
