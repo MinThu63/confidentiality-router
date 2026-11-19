@@ -26,6 +26,7 @@
 | **Headline result** | **90.0% exact destination (72/80), 96% of high-sensitivity kept local (24/25), 0 high-sensitivity to a public API** — on an 80-case holdout written *after* the model was frozen. |
 | **Cost** | 1–2 forward passes, no text generation · 115.8 ms p50 / 126.6 ms p95 · ~4.5 GB VRAM · 202 MB adapter on a 4.3 GB base model. |
 | **Honest caveat** | Calibration error 0.143 vs a 0.10 target, and 3 of 30 internal requests still reached the outside API. A strong filter with a human/policy backstop — not a guarantee. |
+| **Status** | **Handed over to the team — they were happy with the results. Now being integrated into the company's harness for production use.** |
 
 > **What makes it worth reading:** the model is the easy part. The work was building an evaluation harness honest enough to keep proving the project wrong, generating training data that generalises past its author's imagination, and recognising when the remaining gap was a *problem-framing* problem, not a training problem.
 
@@ -63,13 +64,6 @@ Its own computer, its own cloud, or an outside API — whichever fits the reques
 > Why not just ask a big AI model whether a request is safe? Because the request would have to be sent to that model first. A gate that leaks the thing it is gating is not a gate.
 
 ### The policy, in full
-
-```
-p = model.noul(state, GUARD_QUESTION)
-dest = "local" if p > 0.70 else model.choice(state, DESTINATION_QUESTION, criteria)
-```
-
-That is the entire deployment logic.
 
 - **The guard is the safety control.** One fitted number in the whole policy — **0.70** — decides whether a request is forced on-prem. It sits a wide margin below the lowest high-sensitivity score ever observed (0.815).
 - **The second question has no threshold.** Once a request is cleared, the three-way choice decides. A second threshold would be a second knob to fit and defend, and the data never justified one.
