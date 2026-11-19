@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="580" viewBox="0 0 1000 580" role="img" aria-label="Where an AI request can run, and the two-step decision">
+<rect width="1000" height="580" fill="#ffffff"/>
+<text x="50" y="48" font-size="28" font-weight="700" fill="#111111" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">Where can an AI request run?</text>
+<text x="50" y="78" font-size="16" fill="#666666" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">One request. Three places. Picking wrong leaks data — or wastes money.</text>
+
+<!-- three destination boxes -->
+<g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect x="50" y="105" width="280" height="170" rx="12" fill="#f3f4f6" stroke="#111111" stroke-width="2"/>
+  <text x="70" y="140" font-size="13" font-weight="700" fill="#2563eb">1 · OWN COMPUTER</text>
+  <text x="70" y="172" font-size="22" font-weight="700" fill="#111111">Local</text>
+  <text x="70" y="200" font-size="15" fill="#333333">Never leaves the company.</text>
+  <text x="70" y="228" font-size="14" fill="#666666">Personal data, passwords,</text>
+  <text x="70" y="250" font-size="14" fill="#666666">unpublished figures</text>
+
+  <rect x="360" y="105" width="280" height="170" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+  <text x="380" y="140" font-size="13" font-weight="700" fill="#666666">2 · OWN CLOUD</text>
+  <text x="380" y="172" font-size="22" font-weight="700" fill="#111111">Private</text>
+  <text x="380" y="200" font-size="15" fill="#333333">Inside the company's own cloud.</text>
+  <text x="380" y="228" font-size="14" fill="#666666">Internal drafts, plans,</text>
+  <text x="380" y="250" font-size="14" fill="#666666">client material</text>
+
+  <rect x="670" y="105" width="280" height="170" rx="12" fill="#ffffff" stroke="#d1d5db" stroke-width="2"/>
+  <text x="690" y="140" font-size="13" font-weight="700" fill="#666666">3 · OUTSIDE API</text>
+  <text x="690" y="172" font-size="22" font-weight="700" fill="#111111">Public</text>
+  <text x="690" y="200" font-size="15" fill="#333333">An outside company's service.</text>
+  <text x="690" y="228" font-size="14" fill="#666666">Already published,</text>
+  <text x="690" y="250" font-size="14" fill="#666666">or entirely generic</text>
+</g>
+
+<!-- flow -->
+<g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect x="50" y="315" width="900" height="88" rx="12" fill="#111111"/>
+  <text x="70" y="350" font-size="16" font-weight="700" fill="#ffffff">Step 1 — Does this have to stay inside the company?</text>
+  <text x="70" y="378" font-size="15" fill="#d1d5db">Yes → keep it on your own computer. No → go to Step 2.</text>
+
+  <rect x="50" y="423" width="900" height="88" rx="12" fill="#2563eb"/>
+  <text x="70" y="458" font-size="16" font-weight="700" fill="#ffffff">Step 2 — If not, pick the best of the 3 places.</text>
+  <text x="70" y="486" font-size="15" fill="#dbeafe">Local, private, or public — whichever fits the request.</text>
+</g>
+<text x="50" y="552" font-size="14" fill="#666666" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">A small model makes the choice in about 116 milliseconds — faster than a blink.</text>
+</svg>

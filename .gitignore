@@ -1,0 +1,14 @@
+# Model weights, checkpoints and runtime are not published in this repo.
+checkpoints/
+runtime/
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+data/
+work/
