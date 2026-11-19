@@ -1,5 +1,7 @@
 # Confidentiality-Aware Request Router
 
+*Project completed during my internship.*
+
 **A small decision model that decides where an AI request is allowed to run: on-prem, private cloud, or a public API — 90% exactly right, and 0 of 25 high-sensitivity requests sent outside.**
 
 ## Contents
