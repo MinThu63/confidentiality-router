@@ -2,6 +2,21 @@
 
 **A small decision model that decides where an AI request is allowed to run: on-prem, private cloud, or a public API — 90% exactly right, and 0 of 25 high-sensitivity requests sent outside.**
 
+## Contents
+
+- [At a glance](#at-a-glance)
+- [The problem](#the-problem)
+- [What I built](#what-i-built)
+- [How I trained it](#how-i-trained-it)
+- [Data and evaluation sets](#data-and-evaluation-sets)
+- [Headline results](#headline-results)
+- [The full story](#the-full-story)
+- [What I did, vs what was open source](#what-i-did-vs-what-was-open-source)
+- [Stack](#stack)
+- [Talking points](#talking-points)
+- [Files in this repo](#files-in-this-repo)
+- [Licence](#licence)
+
 ## At a glance
 
 | | |
@@ -93,7 +108,7 @@ Consequences that mattered:
 
 The runtime exposes the model as a small HTTP service, so the harness only sees a JSON contract: `POST /v1/systemone` with the request text and a `choice` question carrying `criteria` (label → description). A `choice` question takes `criteria`, not `options` — sending `options` returns HTTP 422. That distinction cost real time and is now the first line of the handover's gotcha list.
 
-## Data — labels and evaluation sets
+## Data and evaluation sets
 
 ### Labels
 
